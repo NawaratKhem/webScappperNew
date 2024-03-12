@@ -1,0 +1,13 @@
+<div tabindex="0" role="button">
+    <img alt="" src="https://theunitedstates.io/images/congress/original/B001224.jpg">
+    <div>
+        <div>
+            <h3>Rep. Cori Bush</h3>
+            <p><span>Democrat</span> • MO-01</p><span>Supports Ceasefire</span>
+        </div>
+        <div><span>A</span>
+        </div>
+    </div>
+</div>
+
+
