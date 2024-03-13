@@ -1,4 +1,4 @@
-<div class="w-full md:p-6">
+export const data = `<div class="w-full md:p-6">
     <div tabindex="0" role="button"
         class="relative flex w-full max-w-screen-lg items-center justify-between rounded-lg overflow-hidden bg-white my-4 mx-auto cursor-pointer outline-none">
         <img alt="" class="w-[45%] xs:w-[25%] sm:w-[20%] aspect-square object-cover"
@@ -5999,4 +5999,4 @@
         </div>
     </div>
     <div class="flex justify-center py-6"></div>
-</div>
+</div>`
