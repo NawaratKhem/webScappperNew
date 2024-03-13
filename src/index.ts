@@ -1,20 +1,21 @@
 import * as cheerio from 'cheerio';
 import fs from 'fs';
+import { data } from './Data/data'
 
 function Main() {
-    const fileContent = `<div tabindex="0" role="button">
-    <img alt="" src="https://theunitedstates.io/images/congress/original/B001224.jpg">
-    <div>
-        <div>
-            <h3>Rep. Cori Bush</h3>
-            <p><span>Democrat</span> • MO-01</p><span>Supports Ceasefire</span>
-        </div>
-        <div><span>A</span>
-        </div>
-    </div>
-  </div>`
+  //   const fileContent = `<div tabindex="0" role="button">
+  //   <img alt="" src="https://theunitedstates.io/images/congress/original/B001224.jpg">
+  //   <div>
+  //       <div>
+  //           <h3>Rep. Cori Bush</h3>
+  //           <p><span>Democrat</span> • MO-01</p><span>Supports Ceasefire</span>
+  //       </div>
+  //       <div><span>A</span>
+  //       </div>
+  //   </div>
+  // </div>`
 
-  const $ = cheerio.load(fileContent);
+  const $ = cheerio.load(data);
 
   $('div[tabindex="0"]').each((i, element) => {
     const result = Parse($(element)); // Pass the Cheerio object
@@ -32,7 +33,7 @@ function Parse(child: cheerio.Cheerio<any>): Record<string, any> {
 
   newLegislature.Name = child.find('h3').text() || '';
   newLegislature.Party = child.find('span').eq(0).text() || '';
-  
+  // console.log(child.find('p'));
   newLegislature.Status = child.find('p').eq(0).next().text() || '';
   newLegislature.Grading = child.find('div').eq(2).find('span').text().trim() || '';
 
